@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<div class="w3-responsive w3-padding-medium">
+
+   <h1>Tasks &nbsp; <%= link_to '<span id="add-span" class="fa fa-plus-square-o"></span>'.html_safe, new_task_path %> </h1>
+
+   <table class="w3-table w3-striped w3-bordered w3-hoverable">
+     <thead>
+       <tr class="w3-blue">
+         <th class="w3-center">Start Time</th>
+         <th>Duration</th>
+         <th class="w3-center">Job ID</th>
+         <th class="w3-center">Picked Up</th>
+         <th></th>
+       </tr>
+     </thead>
+
+     <tbody>
+       <% @tasks.each do |task| %>
+         <tr>
+           <td><%= link_to task.starttime, edit_task_path(task) %></td>
+           <td class="w3-center"><%= task.duration %></td>
+           <td><%= task.jobid %></td>
+           <td><%= task.pickedup %></td>
+           <td><%= link_to '<span class="fa fa-minus-square-o" style="padding-left: 6px; padding-right: 6px; color: red;"></span>'.html_safe, task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+         </tr>
+       <% end %>
+     </tbody>
+   </table>
+</div>
+<br>
+
+<%= link_to 'New Task', new_task_path %>

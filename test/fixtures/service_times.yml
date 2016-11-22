@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  service_start_time: 2016-10-09 01:27:35
+  duration_of_recording: 1
+  minutes_of_prelude: 1
+  go_live_date: 2016-10-09 01:27:35
+
+two:
+  service_start_time: 2016-10-09 01:27:35
+  duration_of_recording: 1
+  minutes_of_prelude: 1
+  go_live_date: 2016-10-09 01:27:35

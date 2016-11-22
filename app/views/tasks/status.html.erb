@@ -1,0 +1,37 @@
+<% content_for :head do %>
+<meta name="viewport" content="width=device-width, user-scalable=yes">
+
+<% end  %>
+<script>
+(function() {
+  jQuery(document).on("page:change", "#refreshable", function() {
+    return $('#refreshable').setInterval;
+  });
+
+}).call(this);
+
+jQuery(function() {
+   setInterval(function(){
+         $("#refreshable").load('refreshable');
+     }, 1000);  }
+);
+
+</script>
+<%= render partial: 'refreshable', locals: { refreshable: @remaining } %>
+<%= form_tag({:action => :timer}, {:method => :put}) do %>
+Adjust the time remaining:
+
+<%= text_field_tag 'timer', @remaining, {:size => 4, 
+					 :maxlength => 3, 
+					 :type => "number", 
+ :onkeydown => "return (( 47<event.keyCode && event.keyCode<58 ) || event.keyCode == 8 || event.keyCode == 13 )"
+					}
+%>
+<%= submit_tag "Adjust" %>
+<% end %>
+<br />
+<%= form_for :task, {:method => :get, :url => tasks_halt_path, :data => {:identifier => @identifier}} do %>
+<%= submit_tag "End Early" %>
+<% end %>
+
+

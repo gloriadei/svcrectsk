@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Service start time:</strong>
+  <%= @service_time.service_start_time %>
+</p>
+
+<p>
+  <strong>Duration of recording:</strong>
+  <%= @service_time.duration_of_recording %>
+</p>
+
+<p>
+  <strong>Minutes of prelude:</strong>
+  <%= @service_time.minutes_of_prelude %>
+</p>
+
+<p>
+  <strong>Go live date:</strong>
+  <%= @service_time.go_live_date %>
+</p>
+
+<%= link_to 'Edit', edit_service_time_path(@service_time) %> |
+<%= link_to 'Back', service_times_path %>

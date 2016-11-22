@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  starttime: 2016-10-09 01:26:14
+  duration: 1
+  jobid: MyString
+  postedforpickup: 2016-10-09 01:26:14
+
+two:
+  starttime: 2016-10-09 01:26:14
+  duration: 1
+  jobid: MyString
+  postedforpickup: 2016-10-09 01:26:14

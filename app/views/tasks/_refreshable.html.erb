@@ -1,0 +1,11 @@
+<div id="refreshable">
+<h1>Recording Status as of <%= Time.now.strftime("%H:%M:%S")%></h1>
+  <% Rails.logger.debug { "To display the refreshable area of our status page, we evaluate the time remaining, if zero we present a custom message.  Indeed, refreshable is currently >>#{refreshable}<<" } %>
+<% if (refreshable == "idle.") %>
+  <h2>Not recording</h2>
+  <% else %>
+<h2>Time remaining: <%= refreshable.to_i / 60 %> <%= "minute".pluralize(refreshable.to_i / 60) %>, <%= refreshable.to_i % 60 %> <%= "second".pluralize( refreshable.to_i % 60 )%> </h2>
+<% end %>
+
+</div>
+

@@ -1,0 +1,64 @@
+<%= form_for(task) do |f| %>
+  <% if task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+      <% task.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="w3-responsive">
+    <table class="w3-table" style="width:60%">
+       <tbody>
+          <tr>
+             <td>Recording Start Time:</td><td><%= f.datetime_field :starttime, id: "starttime_picker" %></td>
+          </tr>
+          <tr>
+             <td>Duration:</td><td><%= f.number_field :duration %></td>
+          </tr>
+          <tr>
+             <td>Job ID:</td><td><%= f.text_field :jobid, size: "60x1" %>
+          </tr>
+          <tr>
+             <td colspan="2"><center><%= f.submit %></td>
+          </tr>
+       </tbody>
+    </table>
+<% end %>
+<script>
+jQuery('#starttime_picker').datetimepicker({
+  format: 'Y-m-d H:i',
+   step: 15,
+   minDate: new Date(),
+   defaultDate: new Date(),
+   defaultTime: 11,
+   startDate: new Date(),
+//   allowTimes: [
+//                '06:30','06:45',
+//                '07:00','07:15','07:30','07:45',
+//                '08:00','08:15','08:30','08:45',
+//                '09:00','09:15','09:30','09:45',
+//                '10:00','10:15','10:30','10:45',
+//                '11:00','11:15','11:30','11:45',
+//                '12:00','12:15','12:30','12:45',
+//                '13:00','13:15','13:30','13:45',
+//                '14:00','14:15','14:30','14:45',
+//                '15:00','15:15','15:30','15:45',
+//                '16:00','16:15','16:30','16:45',
+//                '17:00','17:15','17:30','17:45',
+//                '18:00','18:15','18:30','18:45',
+//                '19:00','19:15','19:30','19:45',
+//                '20:00','20:15','20:30','20:45',
+//                '21:00','21:15','21:30','21:45',
+//                '22:00','22:15','22:30','22:45',
+//                '23:00','23:15','23:30','23:45'
+//               ]
+});
+jQuery('#submit_button').on('click', function() {
+  alert(jQuery(this).periodpicker('value'));
+});
+</script>
+

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Service Times</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Service start time</th>
+      <th>Duration of recording</th>
+      <th>Minutes of prelude</th>
+      <th>Go live date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @service_times.each do |service_time| %>
+      <tr>
+        <td><%= service_time.service_start_time %></td>
+        <td><%= service_time.duration_of_recording %></td>
+        <td><%= service_time.minutes_of_prelude %></td>
+        <td><%= service_time.go_live_date %></td>
+        <td><%= link_to 'Show', service_time %></td>
+        <td><%= link_to 'Edit', edit_service_time_path(service_time) %></td>
+        <td><%= link_to 'Destroy', service_time, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Service Time', new_service_time_path %>

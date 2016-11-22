@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Starttime:</strong>
+  <%= @task.starttime %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @task.duration %>
+</p>
+
+<p>
+  <strong>Jobid:</strong>
+  <%= @task.jobid %>
+</p>
+
+<p>
+  <strong>Postedforpickup:</strong>
+  <%= @task.postedforpickup %>
+</p>
+
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', tasks_path %>

@@ -1,0 +1,1 @@
+json.partial! "service_times/service_time", service_time: @service_time

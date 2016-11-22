@@ -1,0 +1,2 @@
+class ServiceTime < ApplicationRecord
+end

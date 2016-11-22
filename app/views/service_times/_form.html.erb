@@ -1,0 +1,37 @@
+<%= form_for(service_time) do |f| %>
+  <% if service_time.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(service_time.errors.count, "error") %> prohibited this service_time from being saved:</h2>
+
+      <ul>
+      <% service_time.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :service_start_time %>
+    <%= f.datetime_select :service_start_time %>
+  </div>
+
+  <div class="field">
+    <%= f.label :duration_of_recording %>
+    <%= f.number_field :duration_of_recording %>
+  </div>
+
+  <div class="field">
+    <%= f.label :minutes_of_prelude %>
+    <%= f.number_field :minutes_of_prelude %>
+  </div>
+
+  <div class="field">
+    <%= f.label :go_live_date %>
+    <%= f.datetime_select :go_live_date %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

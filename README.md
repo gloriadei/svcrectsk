@@ -1,6 +1,24 @@
-# svcrectsk
+# README
 
-Upgrading to Sierra and switching host means it's just a little easier to go the GitHub route at this point in time.
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-Some configuration files should be omitted from this repository for security purposes.
+Things you may want to cover:
 
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
